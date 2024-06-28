@@ -68,19 +68,42 @@
 
 // ****************************************************************
 // get max
-const numbers = [1, 2, 3, 7];
-const max = getMax(numbers);
+// const numbers = [1, 2, 3, 7];
+// const max = getMax(numbers);
 
-console.log(max);
+// console.log(max);
 
-function getMax(array) {
-  if (array.length === 0) return undefined;
+// function getMax(array) {
+//   if (array.length === 0) return undefined;
 
-  //   let max = array[0];
-  //   for (let i = 1; i < array.length; i++) if (array[i] > max) max = array[i];
-  //   return max;
+//   //   let max = array[0];
+//   //   for (let i = 1; i < array.length; i++) if (array[i] > max) max = array[i];
+//   //   return max;
 
-  return array.reduce((a, b) => (a > b ? a : b));
-}
+//   return array.reduce((a, b) => (a > b ? a : b));
+// }
 
 // ********************************************************
+const movies = [
+  { title: "a", year: 2018, rating: 4.5 },
+  { title: "b", year: 2018, rating: 4.7 },
+  { title: "c", year: 2018, rating: 3 },
+  { title: "d", year: 2017, rating: 4.5 },
+];
+
+//all the movies in 2018 with rating > 4 displayed
+//sort them by their rating
+//decending order
+//pick their title
+
+const titles = movies
+  .filter((m) => m.year === 2018 && m.rating >= 4)
+  .sort(
+    (a, b) => a.rating - b.rating
+    //a =4.5
+    //b=4.5
+  )
+  .reverse()
+  .map((m) => m.title);
+
+console.log(titles);
